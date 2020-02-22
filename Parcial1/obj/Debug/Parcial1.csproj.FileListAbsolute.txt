@@ -1,0 +1,6 @@
+C:\Users\josae\Desktop\UDB\01 2020\Programación con Estructura de Datos\Parcial1PED\Parcial1\Parcial1\bin\Debug\Parcial1.exe.config
+C:\Users\josae\Desktop\UDB\01 2020\Programación con Estructura de Datos\Parcial1PED\Parcial1\Parcial1\bin\Debug\Parcial1.exe
+C:\Users\josae\Desktop\UDB\01 2020\Programación con Estructura de Datos\Parcial1PED\Parcial1\Parcial1\bin\Debug\Parcial1.pdb
+C:\Users\josae\Desktop\UDB\01 2020\Programación con Estructura de Datos\Parcial1PED\Parcial1\Parcial1\obj\Debug\Parcial1.csprojAssemblyReference.cache
+C:\Users\josae\Desktop\UDB\01 2020\Programación con Estructura de Datos\Parcial1PED\Parcial1\Parcial1\obj\Debug\Parcial1.exe
+C:\Users\josae\Desktop\UDB\01 2020\Programación con Estructura de Datos\Parcial1PED\Parcial1\Parcial1\obj\Debug\Parcial1.pdb

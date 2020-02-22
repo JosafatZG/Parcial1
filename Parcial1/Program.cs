@@ -10,7 +10,7 @@ namespace Parcial1
     {
         static void Main(string[] args)
         {
-
+            //Comentario
         }
     }
 }
