@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="hola.cs" />
     <Compile Include="Lista.cs" />
     <Compile Include="Nodo.cs" />
     <Compile Include="Program.cs" />
