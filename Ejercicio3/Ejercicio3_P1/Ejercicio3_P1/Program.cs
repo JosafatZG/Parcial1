@@ -26,7 +26,8 @@ namespace Ejercicio3_P1
                 Console.WriteLine("2. Agregar cliente en cajero específico");
                 Console.WriteLine("3. Quitar cliente");
                 Console.WriteLine("4. Mostrar colas");
-                Console.WriteLine("5. Salir");
+                Console.WriteLine("5. Mostrar cantidad de clientes en cajeros");
+                Console.WriteLine("6. Salir");
                 Console.WriteLine("Escriba la opción que necesita: ");
                 opcion = Convert.ToInt32(Console.ReadLine());
                 Console.Clear();
@@ -35,8 +36,10 @@ namespace Ejercicio3_P1
                 switch (opcion)
                 {
                     case 1: //Agregar cliente"
-                        Console.Write("Nombre del cliente: ");
+                        Console.WriteLine("Nombre del cliente: ");
                         string cliente = Console.ReadLine();
+                        Console.WriteLine("Edad del cliente: ");
+                        int edad = Convert.ToInt32(Console.ReadLine());
                         Console.Clear();
                         Contar();
                         Console.WriteLine("Cajero 1: " + c1.ToString());
@@ -45,34 +48,68 @@ namespace Ejercicio3_P1
                         Console.WriteLine("Cajero 4: " + c4.ToString());
                         Console.WriteLine("Cajero 5: " + c5.ToString() + " \n");
                         int men = Menor();
-                        switch (men)
+                        if (edad >= 60)
                         {
-                            case 0:
-                                Console.WriteLine("Todos los cajeros están vacíos, se agregará al cajero 1");
-                                Cola1.Encolar(cliente);
-                                break;
-                            case 1:
-                                Console.WriteLine("Cajero 1 más vacío. AGREGADO");
-                                Cola1.Encolar(cliente);
-                                break;
-                            case 2:
-                                Console.WriteLine("Cajero 2 más vacío. AGREGADO");
-                                Cola2.Encolar(cliente);
-                                break;
-                            case 3:
-                                Console.WriteLine("Cajero 3 más vacío. AGREGADO");
-                                Cola3.Encolar(cliente);
-                                break;
-                            case 4:
-                                Console.WriteLine("Cajero 4 más vacío. AGREGADO");
-                                Cola4.Encolar(cliente);
-                                break;
-                            case 5:
-                                Console.WriteLine("Cajero 5 más vacío. AGREGADO");
-                                Cola5.Encolar(cliente);
-                                break;
+                            Console.WriteLine("Se agregará a la cola más vacía: {0}", men);
+                            switch (men)
+                            {
+                                case 0:
+                                    Console.WriteLine("Todos los cajeros están vacíos, se agregará al cajero 1");
+                                    Cola1.Encolar(cliente);
+                                    break;
+                                case 1:
+                                    Console.WriteLine("Cajero 1 más vacío. AGREGADO");
+                                    Cola1.Encolar(cliente);
+                                    break;
+                                case 2:
+                                    Console.WriteLine("Cajero 2 más vacío. AGREGADO");
+                                    Cola2.Encolar(cliente);
+                                    break;
+                                case 3:
+                                    Console.WriteLine("Cajero 3 más vacío. AGREGADO");
+                                    Cola3.Encolar(cliente);
+                                    break;
+                                case 4:
+                                    Console.WriteLine("Cajero 4 más vacío. AGREGADO");
+                                    Cola4.Encolar(cliente);
+                                    break;
+                                case 5:
+                                    Console.WriteLine("Cajero 5 más vacío. AGREGADO");
+                                    Cola5.Encolar(cliente);
+                                    break;
+                            }
+                        } else
+                        {
+                            switch (men)
+                            {
+                                case 0:
+                                    Console.WriteLine("Todos los cajeros están vacíos, se agregará al cajero 1");
+                                    Cola1.Encolar(cliente);
+                                    break;
+                                case 1:
+                                    Console.WriteLine("Cajero 1 más vacío. AGREGADO");
+                                    Cola1.Encolar(cliente);
+                                    break;
+                                case 2:
+                                    Console.WriteLine("Cajero 2 más vacío. AGREGADO");
+                                    Cola2.Encolar(cliente);
+                                    break;
+                                case 3:
+                                    Console.WriteLine("Cajero 3 más vacío. AGREGADO");
+                                    Cola3.Encolar(cliente);
+                                    break;
+                                case 4:
+                                    Console.WriteLine("Cajero 4 más vacío. AGREGADO");
+                                    Cola4.Encolar(cliente);
+                                    break;
+                                case 5:
+                                    Console.WriteLine("Cajero 5 más vacío. AGREGADO");
+                                    Cola5.Encolar(cliente);
+                                    break;
 
+                            }
                         }
+                        
                         break;
 
                     case 2: //Agregar cliente en cajero específico
@@ -156,7 +193,16 @@ namespace Ejercicio3_P1
                         Cola5.Mostrar();
                         break;
 
-                    case 5: //Salir
+                    case 5: //Mostrar cantidad de clientes en cajeros
+                        Contar();
+                        Console.WriteLine("Cajero 1: " + c1.ToString());
+                        Console.WriteLine("Cajero 2: " + c2.ToString());
+                        Console.WriteLine("Cajero 3: " + c3.ToString());
+                        Console.WriteLine("Cajero 4: " + c4.ToString());
+                        Console.WriteLine("Cajero 5: " + c5.ToString() + " \n");
+                        break;
+
+                    case 6: //Salir
                         Environment.Exit(0);
                         break;
 
