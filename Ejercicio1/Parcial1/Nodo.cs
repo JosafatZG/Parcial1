@@ -8,7 +8,7 @@ namespace Parcial1
 {
     class nodo
     {
-        public int dato;
+        public string dato;
         public nodo siguiente;
     }
 }

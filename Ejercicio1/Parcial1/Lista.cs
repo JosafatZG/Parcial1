@@ -13,32 +13,12 @@ namespace Parcial1
 
         public lista() { inicio = null; }
 
-        public void InsertarF(int item)
+        public void Insertar()
         {
             nodo auxiliar = new nodo();
-            auxiliar.dato = item;
-            auxiliar.siguiente = null;
 
-            if (inicio == null)
-            {
-                inicio = auxiliar;
-            }
-            else
-            {
-                nodo puntero;
-                puntero = inicio;
-                while (puntero.siguiente != null)
-                {
-                    puntero = puntero.siguiente;
-                }
-                puntero.siguiente = auxiliar;
-            }
-        }
-
-        public void InsertarI(int item)
-        {
-            nodo auxiliar = new nodo();
-            auxiliar.dato = item;
+            Console.Write("Inserte el valor a insertar: ");
+            auxiliar.dato = Console.ReadLine();
             auxiliar.siguiente = null;
 
             if (inicio == null)
@@ -54,72 +34,48 @@ namespace Parcial1
             }
         }
 
-        public void EliminarI()
+        public void Eliminar()
         {
-            if (inicio == null)
-                Console.WriteLine("Lista vacía, no se puede eliminar elemento");
-            else
-                inicio = inicio.siguiente;
-        }
-
-        public void EliminarF()
-        {
+            int contador = 0;
             if (inicio == null)
                 Console.WriteLine("Lista vacía, no se puede eliminar elemento");
             else
             {
-                nodo punteroant, punteropost;
-                punteroant = inicio;
-                punteropost = inicio;
+                Console.Write("Inserte el valor a eliminar: ");
+                string k = Console.ReadLine();
 
-                while (punteropost.siguiente != null)
-                {
-                    punteroant = punteropost;
-                    punteropost = punteropost.siguiente;
-                }
-                punteroant.siguiente = null;
-            }
-        }
-
-        public void InsertarP(int item, int pos)
-        {
-            nodo auxiliar = new nodo();
-            auxiliar.dato = item;
-            auxiliar.siguiente = null;
-
-            if (inicio == null)
-            {
-                Console.WriteLine("La lista está vacia, por lo tanto se va a insertar en la 1ra posición");
-                inicio = auxiliar;
-            }
-            else
-            {
                 nodo puntero;
                 puntero = inicio;
 
-                if (pos == 1)
+                if (k == puntero.dato)
                 {
-                    inicio = auxiliar;
-                    auxiliar.siguiente = puntero;
+                    inicio = inicio.siguiente;
+                    puntero = inicio;
+                    contador++;
                 }
-                else
+
+                while (puntero.siguiente != null)
                 {
-                    for (int i = 1; i < pos - 1; i++)
+                    if (k == puntero.siguiente.dato)
+                    {
+                        puntero.siguiente = puntero.siguiente.siguiente;
+                        contador++;
+                    }
+                    else
                     {
                         puntero = puntero.siguiente;
-                        if (puntero.siguiente == null)
-                            break;
                     }
+                }
 
-                    nodo punteronext;
-                    punteronext = puntero.siguiente;
-                    puntero.siguiente = auxiliar;
-                    auxiliar.siguiente = punteronext;
+                if (contador == 0)
+                {
+                    Console.WriteLine("Ese valor no está contenido en la lista");
+                    Console.ReadKey();
                 }
             }
         }
 
-        public void mostrar()
+        public void Mostrar()
         {
             if (inicio == null)
                 Console.WriteLine("La lista está vacía");
@@ -133,6 +89,28 @@ namespace Parcial1
                     puntero = puntero.siguiente;
                     Console.Write("{0} -> \t", puntero.dato);
                 }
+            }
+            Console.ReadKey();
+        }
+
+        public void Longitud()
+        {
+            int contador = 0;
+            if (inicio == null)
+                Console.WriteLine("La lista está vacía");
+            else
+            {
+                nodo puntero;
+                puntero = inicio;
+                contador++;
+
+                while (puntero.siguiente != null)
+                {
+                    puntero = puntero.siguiente;
+                    contador++;
+                }
+
+                Console.WriteLine("Hay " + contador + " elementos en la lista");
             }
             Console.ReadKey();
         }
